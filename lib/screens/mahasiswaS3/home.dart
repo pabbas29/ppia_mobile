@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ppia_mobile/components/navdrawer.dart';
 import 'package:ppia_mobile/objects/mahasiswaS3.dart';
 
 class ListMahasiswaS3 extends StatefulWidget {
@@ -21,22 +22,24 @@ class _ListMahasiswaS3State extends State<ListMahasiswaS3> {
         title: Text('Daftar Mahasiswa S3'),
         backgroundColor: Colors.purple,
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.menu), 
-            color: Colors.white,
-            onPressed: () {}
-          )
-        ],
       ),
+      drawer: NavDrawer(),
       body: ListView.builder(
         itemCount: mahasiswas.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(mahasiswas[index].getNamaLengkap()),
-            contentPadding: null,
+          return Card(
+            child: ListTile(
+              title: Text(mahasiswas[index].getNamaLengkap()),
+              contentPadding: null,
+              onTap: null, //Tap will direct to detail screen
+            )
           );
-        })
+        }
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {}
+      ),
     );
   }
 }

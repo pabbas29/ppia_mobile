@@ -1,4 +1,4 @@
-class MahasiswaS3 {
+class MahasiswaS2 {
   String _npm;
   String _namaDepan;
   String _namaTengah;
